@@ -1,6 +1,6 @@
-# Hello SSO 服务
+# guanyuan SSO 服务
 
-小型 Axum HTTP 服务，用于按照关元（Guan Yuan）SSO 协议签发 RSA 加密的 token。项目分成可复用的库模块与极薄的启动二进制，方便后续拓展。
+小型 Axum HTTP 服务，用于按照观远（Guan Yuan）SSO 协议签发 RSA 加密的 token。项目分成可复用的库模块与极薄的启动二进制，方便后续拓展。
 
 ## 模块结构
 
