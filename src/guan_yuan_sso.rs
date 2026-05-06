@@ -13,13 +13,13 @@ use rsa::{RsaPrivateKey, RsaPublicKey};
 use std::{env, io, iter};
 
 // 部署时把公钥、私钥放在环境变量里，避免把密钥写进源码。
-const PUBLIC_KEY_ENV: &str = "GUANYUAN_PUBLIC_KEY";
-const PRIVATE_KEY_ENV: &str = "GUANYUAN_PRIVATE_KEY";
+pub const PUBLIC_KEY_ENV: &str = "GUANYUAN_PUBLIC_KEY";
+pub const PRIVATE_KEY_ENV: &str = "GUANYUAN_PRIVATE_KEY";
 
 type Result<T> = std::result::Result<T, Box<dyn std::error::Error + Send + Sync>>;
 
 fn simple_error(msg: &str) -> Box<dyn std::error::Error + Send + Sync> {
-    Box::new(io::Error::new(io::ErrorKind::Other, msg.to_string()))
+    Box::new(io::Error::other(msg.to_string()))
 }
 
 // 下面两个常量与函数只在测试里启用，用随机数生成一对 RSA 密钥。
